@@ -1,0 +1,30 @@
+@import '../../styles/_mixins';
+
+.template {
+  display: grid;
+  grid-template-columns: 15px minmax(290px, auto) 15px;
+  grid-template-rows: 100px 1fr 2fr 1fr;
+
+  @include md {
+    grid-template-columns: 30px minmax(516px, auto) 30px;
+    grid-template-rows: 100px 1fr 2fr 1fr;
+  }
+  
+  @include lg {
+    grid-template-columns: 30px minmax(708px, auto) 30px;
+    grid-template-rows: 100px 1fr 2fr 1fr;
+  }
+
+  @include xl {
+    grid-template-columns: 120px minmax(708px, auto) 120px;
+    grid-template-rows: 100px 1fr 2fr 1fr;
+  }
+}
+
+.layout {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  z-index: 1;
+}

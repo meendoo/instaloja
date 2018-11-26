@@ -1,0 +1,99 @@
+@import './_mixins';
+
+:root {
+    --gray: #3b3b3b;
+    --green-gray: #243032;
+    --lighter-blue: #cef5f8;
+    --blue: #105295;
+    --dark-blue: #1e2943;
+    --darker-blue: #141819;
+    --red: #de1e23;
+    --white: #eee;
+}
+
+body {
+    color: var(--white);
+    background-color: var(--gray);
+    font-family: Alef, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: Keep-Calm;
+
+    @include md {
+        font-size: 40px;
+        line-height: 1.3;
+    }
+    @include lg {
+        font-size: 48px;
+        line-height: 1.3;
+    }
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: Keep-Calm;
+
+    @include md {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    @include lg {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.1;
+
+    @include md {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+    @include lg {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.1;
+
+    @include md {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    @include lg {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+h1 em,
+h2 em {
+    font-style: normal;
+}
+
+a, em {
+    color: var(--red);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

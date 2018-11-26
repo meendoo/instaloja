@@ -1,0 +1,13 @@
+.about {
+    display: flex;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    padding: 4rem 1.5rem;
+    background-color: var(--dark-blue);
+}
+
+.glasses {
+    width: 100%;
+    height: auto;
+}

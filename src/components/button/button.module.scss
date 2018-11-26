@@ -1,0 +1,20 @@
+.button {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem 2rem;
+    border: 2px solid var(--red);
+    color: var(--red);
+    transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    // font-size: 
+
+    &:hover {
+        background-color: var(--red);
+        color: var(--white);
+        text-decoration: none;
+    }
+}
+
+.inverse {
+    border: 2px solid var(--white);
+    color: var(--white);
+}

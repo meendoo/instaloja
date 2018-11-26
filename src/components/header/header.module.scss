@@ -1,0 +1,97 @@
+@import '../../styles/mixins';
+
+.header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-self: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: -2;
+    z-index: 10;
+}
+
+.backdrop {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    height: 120px;
+    pointer-events: none;
+    z-index: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.menuWrapper {
+    display: flex;
+}
+
+.menuBtn {
+    display: block;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    align-self: center;
+
+    h5 {
+        margin: 0;
+    }
+
+    @include lg {
+        display: none;
+    }
+}
+
+.logo {
+    display: flex;
+    grid-column: 1 / 2;
+    align-self: center;
+}
+
+.menu {
+    display: flex;
+    grid-column: 2 / 3;
+    margin: 0;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+    padding: 20vh 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-blue);
+    transform: translateX(100%);
+    
+    @include lg {
+        position: relative;
+        background-color: transparent;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        padding: inherit;
+        text-align: left;
+        transform: none;
+    }
+}
+
+.listItem {
+    color: var(--white);
+    font-family: Alef;
+    font-size: 20px;
+    display: block;
+    
+    @include lg {
+        display: inline-block;
+        margin-left: 2.5rem;
+        font-size: 14px;
+    }
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
