@@ -38,8 +38,8 @@ export class Header extends Component {
 
   hideMenu = () => {
     const menu = this.menu.current;
-    this.menuTl.reverse();
-    TweenMax.to(menu, 0.3, {y: '100%', ease: Power4.easeIn});
+    this.menuTl.stop();
+    TweenMax.to(menu, 0.3, {y: '100%', ease: Power4.easeIn, clearProps: "transform"});
     this.setState({opened:false});
   }
 

@@ -4,7 +4,8 @@
     display: grid;
     grid-template-columns: minmax(15px, 30px) 1fr minmax(15px, 30px);
     grid-template-rows: 1fr 60px 380px 60px 1fr;
-    background-color: #111;
+    background-color: var(--black);
+    // filter: blur(4px);
 
     @include md {
         grid-template-columns: minmax(15px, 30px) 80px minmax(320px, auto) 80px minmax(15px, 30px);
@@ -12,7 +13,7 @@
 }
 
 .hero {
-    background-color: var(--green-gray);
+    // background-color: var(--black);
     padding: 4rem 3rem 4rem 2rem;
     margin: auto;
     text-align: center;
@@ -57,4 +58,12 @@
     background-size: cover;
     background-position: top right;
     transform-origin: right center;
+}
+
+.article {
+    display: inline-block;
+}
+
+.business {
+    display: inline-block;
 }
