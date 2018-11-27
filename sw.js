@@ -26,24 +26,24 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-0a6dbefabef5d4a89421.js"
+    "url": "webpack-runtime-4345065197fc8109ac2d.js"
   },
   {
-    "url": "app-c92b601dc103d7418ed5.js"
+    "url": "app-8bd565c4a318463d0fc9.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-071684b8a605c0b41e47.js"
   },
   {
     "url": "index.html",
-    "revision": "41699237f1e9b22978fa50f11f8b4efa"
+    "revision": "f944b11a5d1bd4e40580c22f32da1b60"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ffe27085c3359f8f40cc8eea2bb317c1"
+    "revision": "920ee52c3e2583b9e82f1acb93ba7c05"
   },
   {
-    "url": "1.b61eb2749eb08d2e7427.css"
+    "url": "1.a83bf073c44a0e0d51a5.css"
   },
   {
     "url": "component---src-pages-index-js.bc17b177e63ecf53f907.css"
@@ -55,11 +55,11 @@ self.__precacheManifest = [
     "url": "1-3dd572d5375e85d0dd0c.js"
   },
   {
-    "url": "0-ef224936683be970f70c.js"
+    "url": "0-66f2d333689dcb548431.js"
   },
   {
-    "url": "static/d/709/path---index-6a9-cZc5m4P1a7B2MeRJSvpsbciof28.json",
-    "revision": "f0f3c2dc63f5e7b38765a97538b9e1eb"
+    "url": "static/d/413/path---index-6a9-reoReJbmRpqh2mE6xS2k9rjv8w.json",
+    "revision": "5b0e00634e63fbd69193959477bb9ae4"
   },
   {
     "url": "component---src-pages-404-js-69315dedc2b06c4f9a57.js"
@@ -80,7 +80,7 @@ self.__precacheManifest = [
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/instaloja/offline-plugin-app-shell-fallback/index.html", {
+workbox.routing.registerNavigationRoute("/offline-plugin-app-shell-fallback/index.html", {
   whitelist: [/^[^?]*([^.?]{5}|\.html)(\?.*)?$/],
   blacklist: [/\?(.+&)?no-cache=1$/],
 });
