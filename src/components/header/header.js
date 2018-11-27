@@ -29,9 +29,9 @@ export class Header extends Component {
     const menu = this.menu.current;
     this.menuTl = new TimelineLite();
     this.menuTl
-      .add( TweenMax.to(`.${styles.listItem}`, 0, {opacity: 0}))
-      .add( TweenMax.fromTo(menu, 0.3, {x: '100%', y: '0%', opacity: 0, ease: Power4.easeIn}, {x: '0%', opacity: 1}), 'slide')
-      .add( TweenMax.staggerFromTo(`.${styles.listItem}`, 0.3, {opacity: 0, y: 30}, {opacity: 1, y: 0}, 0.1), 'slide+=0.3')
+      .add( TweenMax.to(`.${styles.listItem}`, 0, {autoAlpha: 0}))
+      .add( TweenMax.fromTo(menu, 0.3, {x: '100%', y: '0%', autoAlpha: 0, ease: Power4.easeIn}, {x: '0%', autoAlpha: 1}), 'slide')
+      .add( TweenMax.staggerFromTo(`.${styles.listItem}`, 0.3, {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0}, 0.1), 'slide+=0.3')
     this.menuTl.play();
     this.setState({opened:true});
   }
@@ -52,7 +52,7 @@ export class Header extends Component {
       <>
         <header className={styles.header}>
           <Link className={styles.logo} to={'/'}>
-            <Logo width={'240px'} white/>
+            <Logo width={'220px'} white/>
           </Link>
           <div className={styles.menuWrapper}>
             <div className={styles.menuBtn} onClick={this.showMenu}>

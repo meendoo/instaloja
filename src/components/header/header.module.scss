@@ -1,14 +1,13 @@
 @import '../../styles/mixins';
 
 .header {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) auto;
     position: relative;
     justify-content: space-between;
     align-self: center;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: -2;
+    grid-row: 1 / 2;
+    grid-column: 2 / -2;
     z-index: 10;
 }
 
@@ -17,10 +16,8 @@
     height: 120px;
     pointer-events: none;
     z-index: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
 }
 
 .menuWrapper {
@@ -39,7 +36,7 @@
         margin: 0;
     }
 
-    @include lg {
+    @include md {
         display: none;
     }
 }
@@ -67,7 +64,7 @@
     background-color: var(--dark-blue);
     transform: translateX(100%);
     
-    @include lg {
+    @include md {
         position: relative;
         background-color: transparent;
         flex-direction: row;
@@ -85,12 +82,18 @@
     font-size: 20px;
     display: block;
     
-    @include lg {
+    @include md {
         display: inline-block;
-        margin-left: 2.5rem;
+        margin-left: 1.8rem;
         font-size: 14px;
+
+        &:first-child {
+            margin-left: 4rem;
+        }
     }
-    
+    @include lg {
+        margin-left: 2.5rem;
+    }
     &:hover {
         text-decoration: none;
     }

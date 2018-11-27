@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
+import seoImg from '../../../images/seo-print.png'
 
-export class SEO extends Component {
+export default class SEO extends Component {
   defaultTitle = "Instaloja"
   defaultTitleAdd = "Instalações Comerciais em vidros temperados.";
   defaultDescription = "Há mais de 15 anos oferecendo projetos com qualidade e ampliando o seu negócio.";
@@ -11,7 +12,7 @@ export class SEO extends Component {
   render() {
     let data = this.props.data;
     let seo;
-    if (data && data[0] && data[0].slice_type == "seo") {
+    if (data && data[0] && data[0].slice_type === "seo") {
       seo = data[0].primary;
     }
     let title = this.defaultFullTitle;
@@ -19,8 +20,9 @@ export class SEO extends Component {
     let keywords = this.defaultKeywords;
     let type = this.defaultType;
     let url = "";
-    let image = "https://mcm-website.cdn.prismic.io/mcm-website/1c2fff992cdab481b4b1b5e087f7e888af3b424a_mcm-bg-compressed3x.png";
-    if (typeof window != "undefined" && window.location && window.location.href) {
+
+    let image = seoImg;
+    if (typeof window !== "undefined" && window.location && window.location.href) {
       url = window.location.href;
     }
     if (seo && seo.seo_title && seo.seo_title.length > 0) {
@@ -35,7 +37,7 @@ export class SEO extends Component {
     if (seo && seo.seo_type) {
       type = seo.seo_type;
     }
-    if (seo && seo.seo_image && seo.seo_image.url && seo.seo_image.url != "") {
+    if (seo && seo.seo_image && seo.seo_image.url && seo.seo_image.url !== "") {
       image = seo.seo_image.url;
     }
 
@@ -49,6 +51,7 @@ export class SEO extends Component {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <html lang="pt-br" />
       </Helmet>
     );
   }

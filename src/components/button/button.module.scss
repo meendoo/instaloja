@@ -1,3 +1,5 @@
+@import '../../styles/_mixins.scss';
+
 .button {
     display: inline-block;
     margin: 0;
@@ -5,12 +7,21 @@
     border: 2px solid var(--red);
     color: var(--red);
     transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    // font-size: 
+    background-color: var(--red);
+    color: var(--white);
 
     &:hover {
-        background-color: var(--red);
-        color: var(--white);
         text-decoration: none;
+    }
+
+    @include md {
+        color: var(--red);
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--red);
+            color: var(--white);
+        }
     }
 }
 

@@ -16,14 +16,13 @@
   }
 
   @include xl {
-    grid-template-columns: 120px minmax(708px, auto) 120px;
+    grid-template-columns: minmax(120px, auto) minmax(960px, 1400px) minmax(120px, auto);
     grid-template-rows: 100px 1fr 2fr 1fr;
   }
 }
 
 .layout {
   grid-row-start: 1;
-  grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: -1;
   z-index: 1;

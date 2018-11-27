@@ -17,15 +17,28 @@
     padding: 4rem 3rem 4rem 2rem;
     margin: auto;
     text-align: center;
+    position: relative;
     
     @include md {
         margin: inherit;
         text-align: left;
-    }
-        
-    @include md {
         padding: 5rem 6rem 5rem 4rem;
+
+        // &:after {
+        //     content: "";
+        //     width: 600px;
+        //     height: 400px;
+        //     display: block;
+        //     position: absolute;
+        //     top: 0;
+        //     left: -10%;
+        //     background: rgba(0, 0, 0, 0.18);
+        //     z-index: -1;
+        //     filter: blur(50px);
+        //     border-radius: 50%;
+        // }
     }
+    
 }
 
 .cta {
@@ -44,10 +57,14 @@
 .imageWrapper{
     display: grid;
     width: 100%;
-    height: 900px;
+    height: 100vh;
     overflow: hidden;
     grid-column: 1 / -1;
     grid-row: 1 / 6;
+
+    @include md {
+        height: 800px;
+    }
 }
 
 .img {
@@ -66,4 +83,15 @@
 
 .business {
     display: inline-block;
+}
+
+.navWrapper {
+    position: absolute;
+    bottom: 0;
+}
+
+.tickWrapper {
+    width: 80px;
+    height: 3px;
+    margin-right: 1rem;
 }
