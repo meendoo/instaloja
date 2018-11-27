@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Instaloja',
   },
-  pathPrefix: `/instaloja/public`,
+  pathPrefix: `/instaloja`,
   plugins: [
     'gatsby-plugin-react-helmet',
     {
