@@ -14,7 +14,7 @@
 
 .hero {
     // background-color: var(--black);
-    padding: 4rem 3rem 4rem 2rem;
+    padding: 4rem 1.5rem;
     margin: auto;
     text-align: center;
     position: relative;
@@ -22,7 +22,6 @@
     @include md {
         margin: inherit;
         text-align: left;
-        padding: 5rem 6rem 5rem 4rem;
 
         // &:after {
         //     content: "";

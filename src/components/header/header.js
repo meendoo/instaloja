@@ -21,6 +21,36 @@ export class Header extends Component {
     }
   }
 
+  componentDidMount = () => {
+    // this.showScrolledHeader();
+  }
+  
+
+  showScrolledHeader = () => {
+    let header = document.querySelector(`.${styles.header}`);
+    window.addEventListener('scroll', () => {
+      // if (window.pageYOffset > 10) {
+      //   header.style.position = 'fixed';
+      //   header.style.left = '120px';
+      //   header.style.right = '120px';
+      //   header.style.top = '40px';
+      //   header.style.maxWidth = '1400px';
+      //   header.style.margin = '0px auto';
+      //   // header.style.top = window.pageYOffset+'px';
+      // } else {
+      //   header.style.position = 'relative';
+      //   header.style.left = 'initial';
+      //   header.style.right = 'initial';
+      //   header.style.top = 'initial';
+      //   header.style.maxWidth = 'initial';
+      //   header.style.margin = 'initial';
+      // }
+      // } else {
+      //   TweenMax.to(`.${styles.header}`, 0.1, {y: '0', ease: Power3.easeInOut});
+      // }
+    })
+  }
+
   showMenu = () => {
     if (this.state.opened) {
       this.hideMenu();

@@ -1,13 +1,56 @@
+@import '../../styles/_mixins.scss';
+
 .about {
     display: flex;
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: -1;
-    padding: 4rem 1.5rem;
+    padding: 2rem 0;
     background-color: var(--dark-blue);
+    @include md {
+        padding: 4rem 1.5rem;
+    }
+}
+
+.container {
+    flex-wrap: wrap;
+    @include md {
+        flex-wrap: nowrap;
+    }
 }
 
 .glasses {
     width: 100%;
+    max-width: 80px;
     height: auto;
+    margin: -6rem auto 0;
+    padding-right: 0;
+    max-height: 130px;
+
+    @include md {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto;
+        margin-right: 2rem;
+        max-height: initial;
+    }
+
+    @include lg {
+        max-width: initial;
+        padding: 1rem 0;
+    }
+}
+
+.copy {
+    grid-column: 1 / -1;
+    padding: 1.5rem 0;
+    @include md {
+        grid-column: 3 / 4;
+        padding: initial;
+    }
+
+    h4 {
+        margin-bottom: 0;
+    }
 }

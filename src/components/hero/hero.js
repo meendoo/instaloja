@@ -12,10 +12,21 @@ const headlines = [
 
 export default class Hero extends React.Component {
 
-
     componentDidMount = () => {
         this.animateBgHero();
         this.animateTitleHero();
+        this.parallaxTitle();
+    }
+
+    parallaxTitle = (element) => {
+        let target = document.querySelector(`.${styles.hero}`) || element;
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset / 4 > 100) {
+                return;
+            } else {
+                target.style.top = `${window.pageYOffset / 2}px`;
+            }
+        })
     }
 
     updateTitles(target, data) {       
@@ -63,7 +74,7 @@ export default class Hero extends React.Component {
     
     render() {
         const images = this.props.data.edges.map((edges, i) => {
-            return <div key={'img'+i} className={styles.img} style={{backgroundImage: `url('${edges.node.childImageSharp.original.src}')`}}/>
+            return <div key={'img'+i} className={styles.img} style={{backgroundImage: `url('${edges.node.childImageSharp.fluid.originalImg}')`}}/>
         });
         const nav = this.props.data.edges.map((edges, i) => {
             return <div key={'nav'+i} className={styles.tickWrapper}><div className={styles.tick}></div></div>

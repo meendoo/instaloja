@@ -1,5 +1,33 @@
+@import '../../styles/_mixins.scss';
+
 .container {
     display: flex;
     grid-column-start: 1;
     grid-column-end: -1;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    @include sm {
+        max-width: 576px;
+    }
+
+    @include md {
+        padding: 0 2rem;
+        max-width: 768px;
+    }
+
+    @include lg {
+        padding: 0 3rem;
+        max-width: 992px;
+    }
+
+    @include xl {
+        padding: 0 4rem;
+        max-width: 1400px;
+    }
 }
+
+// $sm: 576px;
+// $md: 768px;
+// $lg: 992px;
+// $xl: 1200px;

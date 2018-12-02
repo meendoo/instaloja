@@ -1,0 +1,77 @@
+@import '../../styles/_mixins.scss';
+
+.segments {
+    padding: 4rem 0;
+    background: var(--white);
+    color: var(--green-gray);
+}
+
+.container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.title {
+    flex: 1 0 100%;
+}
+
+.box {
+    flex: 0 1 auto;
+    flex-direction: row;
+    display: flex;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+.ul-settings {
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+        overflow-y: scroll;
+        max-height: 330px;
+        max-width: 250px;
+        background: white;
+        align-self: stretch;
+        margin-bottom: 0;
+        min-width: 200px;
+    }
+}
+
+.headingWrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.sectionTitle {
+    padding: 1rem 2rem;
+    margin: 0;
+    color: white;
+}
+
+.icon {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.commercial {
+    @extend .box;
+    @extend .ul-settings;
+    background: linear-gradient(#194ecc, #103794);
+}
+
+.residencial {
+    @extend .box;
+    @extend .ul-settings;
+    background: linear-gradient(#bd1414, #861414);
+}
+
+.item {
+    padding: 0.5rem 2rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+}

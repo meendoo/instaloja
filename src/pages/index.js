@@ -1,15 +1,17 @@
 import React from 'react'
-// import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import Hero from '../components/hero'
 import Callout from '../components/callout'
 import About from '../components/about'
+import Segments from '../components/segments'
 
 const IndexPage = ({data}) => (
   <Layout>
     <Hero data={data.Hero}/>
     <Callout/>
-    <About/>
+    <About id="empresa"/>
+    <Segments id="segmentos"/>
   </Layout>
 )
 
@@ -22,10 +24,9 @@ export const query = graphql`
             edges {
                 node {
                     childImageSharp {
-                        original {
-                            width
-                            height
-                            src
+                        fluid {
+                            originalImg
+                            originalName
                         }
                     }
                 }
