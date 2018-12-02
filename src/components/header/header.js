@@ -27,7 +27,7 @@ export class Header extends Component {
   
 
   showScrolledHeader = () => {
-    let header = document.querySelector(`.${styles.header}`);
+    // let header = document.querySelector(`.${styles.header}`);
     window.addEventListener('scroll', () => {
       // if (window.pageYOffset > 10) {
       //   header.style.position = 'fixed';

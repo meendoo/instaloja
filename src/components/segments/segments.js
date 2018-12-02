@@ -9,11 +9,11 @@ export default function Segments(props) {
   return (
     <div className={styles.segments} id={props.id || null}>
         <Container className={styles.container}>
-            <h3 className={styles.title}>CONHEÇA OS<br/><strong>PRINCIPAIS SEGMENTOS</strong><Tick/></h3>
+            <h3 className={styles.title}>CONHEÇA OS<br/><strong>PRINCIPAIS SEGMENTOS</strong><Tick centered/></h3>
             <div className={styles.commercial}>
                 <div className={styles.headingWrapper}>
-                    <h3 className={styles.sectionTitle}>Comercial</h3>
                     <img src={store} alt="Comercial ícone" className={styles.icon}/>
+                    <h3 className={styles.sectionTitle}>Comercial</h3>
                 </div>
                 <ul className={styles.list}>
                     <li className={styles.item}>Farmácias</li>
@@ -37,8 +37,8 @@ export default function Segments(props) {
             </div>
             <div className={styles.residencial}>
                 <div className={styles.headingWrapper}>
-                    <h3 className={styles.sectionTitle}>Residencial</h3>
                     <img src={house} alt="Residencial ícone" className={styles.icon}/>
+                    <h3 className={styles.sectionTitle}>Residencial</h3>
                 </div>
                 <ul className={styles.list}>
                     <li className={styles.item}>Box p/ banheiros</li>
