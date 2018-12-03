@@ -1,0 +1,15 @@
+@import '../../styles/_mixins.scss';
+
+.gallery {
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    margin-bottom: 0;
+    width: 20vw;
+    height: 20vw;
+    @include md {
+        width: 200px;
+        height: 200px;
+    }
+}

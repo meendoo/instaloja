@@ -24,7 +24,7 @@ export default class Hero extends React.Component {
             if (window.pageYOffset / 4 > 100) {
                 return;
             } else {
-                target.style.top = `${window.pageYOffset / 2}px`;
+                target.style.transform = `translateY(${window.pageYOffset / 4}px)`;
             }
         })
     }
@@ -84,7 +84,7 @@ export default class Hero extends React.Component {
                 <div className={styles.cta}>
                     <div className={styles.hero}>
                         <h1>COMECE JÁ<br/><span className={styles.article}>O</span> <em className={styles.business}>SEU COMÉRCIO</em></h1>
-                        <Button to={"#contato"} title="monte sua loja"/>
+                        <Button to={"#contato"}>MONTE SUA LOJA</Button>
                     </div>
                 </div>
                 <div className={styles.imageWrapper}>

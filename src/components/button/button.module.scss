@@ -9,6 +9,8 @@
     transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     background-color: var(--red);
     color: var(--white);
+    cursor: pointer;
+    outline: none;
 
     &:hover {
         text-decoration: none;

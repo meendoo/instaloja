@@ -5,11 +5,8 @@
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: -1;
-    padding: 2rem 0;
-    background-color: var(--dark-blue);
-    @include md {
-        padding: 4rem 1.5rem;
-    }
+    background-color: var(--blue);
+    // background: linear-gradient(to right, #316eff, var(--dark-blue));
 }
 
 .container {
@@ -23,7 +20,7 @@
     width: 100%;
     max-width: 80px;
     height: auto;
-    margin: -6rem auto 0;
+    margin: -6.4rem auto 0;
     padding-right: 0;
     max-height: 130px;
 

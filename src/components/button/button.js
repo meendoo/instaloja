@@ -4,6 +4,11 @@ import styles from './button.module.scss'
 
 export default function Button(props) {
   return (
-    <Link className={`${styles.button} ${props.inverse ? styles.inverse : ''}`} to={props.to}>{(props.title).toUpperCase()}</Link>
+    <>
+      {props.to
+        ? <Link className={`${styles.button} ${props.inverse ? styles.inverse : ''}`} to={props.to}>{props.children}</Link>
+        : <button className={`${styles.button} ${props.inverse ? styles.inverse : ''}`}>{props.children}</button>
+      }
+    </>
   )
 }
