@@ -2,25 +2,38 @@ import React, { Component } from 'react'
 import styles from './about.module.scss';
 import Container from '../layout/container'
 import Glasses from './glasses'
-import { TweenMax, Power1 } from 'gsap';
+import { TweenMax, Power1 } from 'gsap/all';
+import ScrollMagic from 'scrollmagic';
+import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 
 export default class About extends Component {
 
   componentDidMount = () => {
-    this.animatedGlasses();
+    this.props.controller.addScene(
+      new ScrollMagic.Scene({
+        duration: 0,
+        triggerElement: `.${styles.glasses}`,
+        offset: window.innerWidth < 768 ? 150 : 300,
+        reverse: false,
+        triggerHook: 1
+      })
+      .setTween(this.animatedGlasses())
+    );
   }
 
   animatedGlasses = () => {
     let glasses = document.querySelectorAll('.glasses');
     let glassesArr = [].slice.call(glasses);
+    let tweens = [];
     glassesArr.forEach((element, i) => {
       let value = 80;
       if (i % 2 === 0) {
         value = -value
       }
-      TweenMax.from(element, 1, {autoAlpha: 0, x: Math.random()*value , y: Math.random()*value, yoyo:true, ease: Power1.easeOut});
+      tweens.push(TweenMax.from(element, 1, {autoAlpha: 0, x: Math.random()*value , y: Math.random()*value, yoyo:true, ease: Power1.easeOut}));
       // TweenMax.fromTo(`.${styles.about}`, 3, {background: 'linear-gradient(to right, rgb(30, 41, 67), rgb(30, 41, 67))'}, {background: 'linear-gradient(to right, rgb(49, 110, 255), rgb(30, 41, 67))'});
     });
+    return tweens;
   }
 
   render() {

@@ -1,0 +1,20 @@
+.contact {
+    background-color: var(--dark-blue);
+}
+
+.container {
+    flex-wrap: wrap;
+    max-width: 700px;
+}
+
+.form {
+    margin: 0 auto;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+
+    input[type="text"],
+    input[type="email"] {
+        flex: 1 0 100%;
+    }
+}

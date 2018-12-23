@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Glasses(props) {
+export default function Glasses({className}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249.17 247.68" className={props.className}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249.17 247.68" className={className}>
         <g>
             <g className="glasses">
                 <polygon points="233.41 243.51 245.45 102.44 249.17 106.62 237.13 247.68 233.41 243.51" fill="#2756e3" style={{opacity: 0.77}} />

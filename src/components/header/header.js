@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Logo from './logo'
 import { Link } from 'gatsby'
 import styles from './header.module.scss';
-import { TimelineLite, TweenMax, Power4 } from 'gsap';
+import { TimelineLite, TweenMax, Power4, Power2 } from 'gsap/all';
 
 const MENUS = [
     'empresa',
@@ -19,63 +19,48 @@ export class Header extends Component {
     this.state = {
       opened: false
     }
+    this.menuTl = new TimelineLite();
+    
   }
 
-  componentDidMount = () => {
-    // this.showScrolledHeader();
-  }
-  
-
-  showScrolledHeader = () => {
-    // let header = document.querySelector(`.${styles.header}`);
-    window.addEventListener('scroll', () => {
-      // if (window.pageYOffset > 10) {
-      //   header.style.position = 'fixed';
-      //   header.style.left = '120px';
-      //   header.style.right = '120px';
-      //   header.style.top = '40px';
-      //   header.style.maxWidth = '1400px';
-      //   header.style.margin = '0px auto';
-      //   // header.style.top = window.pageYOffset+'px';
-      // } else {
-      //   header.style.position = 'relative';
-      //   header.style.left = 'initial';
-      //   header.style.right = 'initial';
-      //   header.style.top = 'initial';
-      //   header.style.maxWidth = 'initial';
-      //   header.style.margin = 'initial';
-      // }
-      // } else {
-      //   TweenMax.to(`.${styles.header}`, 0.1, {y: '0', ease: Power3.easeInOut});
-      // }
-    })
-  }
-
-  showMenu = () => {
+  menuToggleButton = () => {
     if (this.state.opened) {
       this.hideMenu();
       return;
     }
-    const menu = this.menu.current;
-    this.menuTl = new TimelineLite();
-    this.menuTl
-      .add( TweenMax.to(`.${styles.listItem}`, 0, {autoAlpha: 0}))
-      .add( TweenMax.fromTo(menu, 0.3, {x: '100%', y: '0%', autoAlpha: 0, ease: Power4.easeIn}, {x: '0%', autoAlpha: 1}), 'slide')
-      .add( TweenMax.staggerFromTo(`.${styles.listItem}`, 0.3, {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0}, 0.1), 'slide+=0.3')
-    this.menuTl.play();
+    this.showMenu('full');
     this.setState({opened:true});
   }
 
-  hideMenu = () => {
-    const menu = this.menu.current;
+  showMenu = () => {
+    this.menuTl
+      .add( TweenMax.fromTo(this.menu.current, 0.3, {x: '100%', y: '0%', autoAlpha: 0, ease: Power4.easeIn}, {x: '0%', autoAlpha: 1}), 'slide' )
+      .add( TweenMax.staggerFromTo(`.${styles.listItem}`, 0.3, {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0}, 0.1), 'slide+=0.3' )
+    this.menuTl.play(0);
+  }
+
+  hideMenu = (type) => {
     this.menuTl.stop();
-    TweenMax.to(menu, 0.3, {y: '100%', ease: Power4.easeIn, clearProps: "transform"});
     this.setState({opened:false});
+    TweenMax.to(this.menu.current, 0.3, {y: '100%', ease: Power4.easeIn, clearProps: "transform"});
+    if (type === 'full') {
+      TweenMax.to(`.${styles.listItem}`, 0.3, {autoAlpha: 0});
+    }
+  }
+
+  menuClick = (e) => {
+    e.preventDefault();
+    if (this.menuTl) {
+      this.hideMenu();
+    }
+    if (document.querySelector(e.target.hash)) {
+      TweenMax.to(window, 1, {scrollTo: {y: e.target.hash, offsetY: e.target.hash === '#empresa' && window.innerWidth < 768 ? '50' : 0}, ease: Power2.easeOut});
+    }
   }
 
   render() {
     const menu = MENUS.map(item => {
-      return <Link to={`#${item}`} key={item} className={styles.listItem} onClick={this.hideMenu}>{item.toUpperCase()}</Link>
+      return <Link to={`#${item}`} key={item} className={styles.listItem} onClick={this.menuClick}>{item.toUpperCase()}</Link>
     });
 
     return (
@@ -85,7 +70,7 @@ export class Header extends Component {
             <Logo width={'220px'} white/>
           </Link>
           <div className={styles.menuWrapper}>
-            <div className={styles.menuBtn} onClick={this.showMenu}>
+            <div className={styles.menuBtn} onClick={this.menuToggleButton}>
               <h5>{this.state.opened ? 'FECHAR' : 'MENU'}</h5>
             </div>
             <ul className={styles.menu} ref={this.menu}>

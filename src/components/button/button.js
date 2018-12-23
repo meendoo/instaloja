@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styles from './button.module.scss'
 
-export default function Button(props) {
+export default function Button({children, to, inverse}) {
   return (
     <>
-      {props.to
-        ? <Link className={`${styles.button} ${props.inverse ? styles.inverse : ''}`} to={props.to}>{props.children}</Link>
-        : <button className={`${styles.button} ${props.inverse ? styles.inverse : ''}`}>{props.children}</button>
+      {to
+        ? <Link className={`${styles.button} ${inverse ? styles.inverse : ''}`} to={to}>{children}</Link>
+        : <button className={`${styles.button} ${inverse ? styles.inverse : ''}`}>{children}</button>
       }
     </>
   )

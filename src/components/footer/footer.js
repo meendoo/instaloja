@@ -1,11 +1,14 @@
 import React from 'react'
 import styles from './footer.module.scss'
+import Container from '../layout/container'
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-        <p>Instaloja Instalações Comerciais® - {Date.now('yyyy')}</p>
-        <p>Horários de funcionamento: Segunda à sexta 8h-18h e sábados 10h-14h</p>
+        <Container>
+          <p>Instaloja Instalações Comerciais® - { Array.from(Date().split(' '))[3] }</p>
+          <p>Horários de funcionamento: SEG À SEX 8h-18h e SÁB 10h-14h</p>
+        </Container>
     </footer>
   )
 }

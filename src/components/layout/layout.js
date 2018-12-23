@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../header'
 import Footer from '../footer'
-import SEO from '../utils/seo'
+import { SEO } from '../utils'
 import '../../styles/reset.scss'
 import '../../styles/fonts.scss'
 import '../../styles/base.module.scss'
