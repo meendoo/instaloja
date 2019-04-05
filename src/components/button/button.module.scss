@@ -1,9 +1,23 @@
 @import '../../styles/_mixins.scss';
 
+.sm {
+    font-size: 14px;
+    padding: 0.75rem 1.5rem;
+}
+
+.md {
+    font-size: 16px;
+    padding: 1rem 2rem;
+}
+
+.lg {
+    font-size: 22px;
+    padding: 1.25rem 2.5rem;
+}
+
 .button {
     display: inline-block;
     margin: 0;
-    padding: 1rem 2rem;
     border: 2px solid var(--red);
     color: var(--red);
     transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
