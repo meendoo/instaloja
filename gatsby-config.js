@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: 'Instaloja',
+    siteUrl: `http://www.instaloja.com.br`,
+    description: `Instalações Comerciais em Modulados de vidro temperado`,
   },
-  pathPrefix: `/instaloja`,
+  pathPrefix: '/test_build',
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -27,26 +29,17 @@ module.exports = {
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline'
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "UA-129407935-1",
-    //     // Puts tracking script in the head instead of the body
-    //     head: false,
-    //     // Setting this parameter is optional
-    //     anonymize: true,
-    //     // Setting this parameter is also optional
-    //     respectDNT: true,
-    //     // Avoids sending pageview hits from custom paths
-    //     exclude: ["/preview/**", "/do-not-track/me/too/"],
-    //     // Enables Google Optimize using your container Id
-    //     optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-    //     // Any additional create only fields (optional)
-    //     sampleRate: 5,
-    //     siteSpeedSampleRate: 10,
-    //     cookieDomain: "example.com",
-    //   },
-    // },
+    // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: 'UA-129407935-1',
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // enable ip anonymization
+        anonymize: true,
+      },
+    },
   ],
-}
+};
