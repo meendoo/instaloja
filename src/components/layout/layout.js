@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../header'
-import Footer from '../footer'
+// import Footer from '../footer'
 import { SEO } from '../utils'
 import '../../styles/reset.scss'
 import '../../styles/fonts.scss'
@@ -23,15 +23,14 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <SEO/>
-        
+        <SEO />
+
         <section className={styles.template} role="main">
           <Header />
-          
+
           <div className={styles.layout} lala="1">
             {children}
           </div>
-          <Footer />
         </section>
       </>
     )}
