@@ -8,11 +8,18 @@
     margin-bottom: 0;
     width: 20vw;
     height: 20vw;
-    border: 2px solid white;
+    border: 4px solid white;
     box-sizing: border-box;
     cursor: pointer;
     @include md {
         width: 200px;
         height: 200px;
+        border: 8px solid white;
     }
+}
+
+.btnMore {
+    display: flex;
+    margin: 2rem auto 0;
+    cursor: pointer;
 }
