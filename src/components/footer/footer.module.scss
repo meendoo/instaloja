@@ -1,8 +1,93 @@
+@import '../../styles/_mixins.scss';
+
+.footerHolder {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
 .footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    background: var(--darker-blue);
     // grid-row-start: 3;
     // grid-row-end: 4;
     // grid-column-start: 1;
     // grid-column-end: -1;
+    
+    .footerColumn {
+        display: block;
+        margin: 0 1.5rem 2rem;
+
+        &:last-child {
+            margin: 0 1.5rem 0;
+        }
+        
+    }
+
+    .openingHours {
+        flex: 1 0 100%;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+    }
+
+    
+    .bottomBar {
+        display: flex;
+        justify-content: space-around;
+        flex: 1 0 100%;
+        background-color: var(--black);
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        
+        @include md {
+            flex-wrap: initial;
+        }
+        
+        .copyright {
+            color: var(--white);
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .design {
+            font-size: 14px;
+            margin: 0;
+
+            a {
+                color: var(--red);
+            }
+        }
+    }
+}
+
+.line {
+    background-color: white;
+    opacity: 0.2;
+    width: 30%;
+    height: 1px;
+    margin: 0 0 1.5rem;
+}
+
+.socialList {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+
+    li:not(:first-child) {
+        margin-left: 1rem;
+    }
+}
+
+.footerIcons {
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 80%,rgba(255,255,255,0) 80%);
+    border-radius: 8px;
+}
+
+.instagram {
+    fill: url(#instagram-gradient) ;
+}
+
+.whatsappSmall {
+    border-radius: 2px;
 }

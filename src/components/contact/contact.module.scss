@@ -8,13 +8,102 @@
 }
 
 .form {
-    margin: 0 auto;
-    max-width: 500px;
     display: flex;
     flex-wrap: wrap;
+    flex: 1 1 500px;
 
-    input[type="text"],
-    input[type="email"] {
-        flex: 1 0 100%;
+    input,
+    select,
+    textarea {
+        flex: 1 1 100%;
+        border: none;
+        border-bottom: 2px solid var(--gray);
+        color: var(--lighter-blue);
+        margin-bottom: 1rem;
+        background: #444;
+        padding: 0.4rem 1rem;
+        border-radius: 0;
     }
+
+    input[type=radio] {
+        margin: 0 0.5rem 0 0;
+        align-self: center;
+    }
+    
+    select {
+        height: 45px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /* CAUTION: IE hackery ahead */
+    select::-ms-expand { 
+        display: none; /* remove default arrow on ie10 and ie11 */
+    }
+
+    /* target Internet Explorer 9 to undo the custom arrow */
+    @media screen and (min-width:0\0) {
+        select {
+            background:none\9;
+            padding: 5px\9;
+        } 
+    }
+
+    textarea {
+        min-height: 120px;
+        background: #636363;
+        border: none;
+    }
+
+    textarea:required {
+        box-shadow: none;
+    }
+
+    input[type=submit] {
+        background: var(--red);
+        border: none;
+        flex: 0 1 auto;
+        cursor: pointer;
+    }
+
+    .selectWrapper {
+        display: flex;
+        flex: 1 0 100%;
+        position: relative;
+
+        &:before {
+            content: "▾";
+            display: block;
+            position: absolute;
+            right: 16px;
+            top: 0;
+            line-height: 44px;
+        }
+    }
+
+    .rowWrapper {
+        display: flex;
+        align-items: baseline;
+        flex: 1 0 100%;
+        flex-wrap: wrap;
+        min-height: 45px;
+    }
+
+    .segmentLabel {
+        margin-right: 1rem;
+    }
+
+    .radioblock {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+}
+
+.success {
+    color: #1ddc1d;
+    border: 1px solid currentColor;
+    padding: 1rem;
+    display: inline-block;
 }
